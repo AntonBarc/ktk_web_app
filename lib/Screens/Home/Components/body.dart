@@ -22,7 +22,7 @@ class Body extends StatelessWidget {
                 ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 30),
             child: Text(
               'Выполните вход для продолжения',
               style: TextStyle(
