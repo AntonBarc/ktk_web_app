@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Colors.blue;
+const sPrimaryColor = Colors.white;
 const kTextColor = Color(0xFF241424);
-const sTextColor = Color.fromARGB(255, 255, 255, 255);
+const sTextColor = Colors.white;
 const kDarkButton = Color(0xFF372930);
