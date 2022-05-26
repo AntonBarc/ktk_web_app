@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ktk_web/Screens/Home/Components/body.dart';
 import 'Components/app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,8 +19,10 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             CustomAppBar(),
+            Body(),
           ],
         ),
       ),
