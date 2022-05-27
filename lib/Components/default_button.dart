@@ -21,7 +21,8 @@ class DefaultButton extends StatelessWidget {
           'Войти'.toUpperCase(),
           style: TextStyle(
             fontSize: 20,
-            fontFamily: 'Oswald',
+            fontFamily: 'Roboto',
+            color: sTextColor,
           ),
         ),
       ),

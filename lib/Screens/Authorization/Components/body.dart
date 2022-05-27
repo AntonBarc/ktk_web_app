@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:html';
 
 import 'package:flutter/material.dart';
@@ -7,6 +9,9 @@ import 'package:ktk_web/constant.dart';
 class Body extends StatelessWidget {
   TextEditingController _loginController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
+  late String _login;
+  late String _password;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,7 @@ class Body extends StatelessWidget {
     Widget _input(Icon icon, String hint, TextEditingController controller,
         bool obscure) {
       return Container(
-        padding: EdgeInsets.only(left: 540, right: 540),
+        padding: EdgeInsets.symmetric(horizontal: 540),
         child: TextField(
           controller: controller,
           obscureText: obscure,
@@ -44,7 +49,7 @@ class Body extends StatelessWidget {
           decoration: InputDecoration(
             hintStyle: TextStyle(
               fontFamily: 'Roboto',
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.normal,
               fontSize: 20,
               color: sPrimaryColor,
             ),
@@ -69,7 +74,32 @@ class Body extends StatelessWidget {
       );
     }
 
-    Widget _form(String label, void func()) {
+    Widget _button(
+      String text,
+      void func(),
+    ) {
+      return RaisedButton(
+        splashColor: Theme.of(context).primaryColor,
+        highlightColor: Theme.of(context).primaryColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        child: Text(
+          text,
+          style: TextStyle(
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.bold,
+              color: kPrimaryColor,
+              fontSize: 20),
+        ),
+        onPressed: () {
+          func();
+        },
+      );
+    }
+
+    Widget _form(
+      String label,
+      void func(),
+    ) {
       return Container(
         child: Column(
           children: <Widget>[
@@ -87,11 +117,11 @@ class Body extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 20, right: 20),
+              padding: EdgeInsets.symmetric(horizontal: 720),
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width,
-                child: Text(label),
+                child: _button(label, func),
               ),
             ),
           ],
@@ -99,10 +129,18 @@ class Body extends StatelessWidget {
       );
     }
 
+    void _buttonAction() {
+      _login = _loginController.text;
+      _password = _passwordController.text;
+
+      _loginController.clear();
+      _passwordController.clear();
+    }
+
     return Column(
       children: <Widget>[
         _logo(),
-        _form('Войти'.toUpperCase(), () {}),
+        _form('Войти'.toUpperCase(), _buttonAction),
       ],
     );
   }
