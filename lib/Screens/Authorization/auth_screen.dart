@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Home/Components/body.dart';
+import 'package:ktk_web/Screens/Authorization/Components/body.dart';
 import 'Components/app_bar.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -12,7 +12,29 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: Container(
+        height: size.height,
+        width: size.width,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/bg.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            CustomAppBar(),
+            Body(),
+            Spacer(
+              flex: 2,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
