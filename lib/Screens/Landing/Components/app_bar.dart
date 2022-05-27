@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import '../../../Components/account_button.dart';
 import '../../../Components/default_button.dart';
 import '../../../constant.dart';
 import 'menu_item.dart';
@@ -50,7 +49,7 @@ class CustomAppBar extends StatelessWidget {
             title: 'Помощь',
             press: () {},
           ),
-          AccountButton(),
+          DefaultButton(),
         ],
       ),
     );

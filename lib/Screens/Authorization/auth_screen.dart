@@ -37,10 +37,3 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 }
-
-/* decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/bg.png'),
-            fit: BoxFit.cover,
-          ),
-        ), */
