@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'Screens/Home/home_screen.dart';
 import 'constant.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: kPrimaryColor,
       ),
-      home: HomeScreen(),
+      home: AuthScreen(),
     );
   }
 }
