@@ -20,8 +20,10 @@ class BodyButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(46)),
-          child: RaisedButton(
-            color: sPrimaryColor,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(sPrimaryColor),
+            ),
             onPressed: () {},
             child: Container(
               padding: EdgeInsets.all(15),

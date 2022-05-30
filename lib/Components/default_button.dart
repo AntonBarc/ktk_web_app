@@ -13,9 +13,13 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
-      child: FlatButton(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 20),
-        color: kPrimaryColor,
+      child: TextButton(
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(
+            EdgeInsets.symmetric(horizontal: 35, vertical: 20),
+          ),
+          backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
+        ),
         onPressed: () {},
         child: Text(
           'Войти'.toUpperCase(),
