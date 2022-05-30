@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Home/Components/body.dart';
 import 'Components/app_bar.dart';
+import 'Components/bottom_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,11 +23,8 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             CustomAppBar(),
-            Spacer(),
             Body(),
-            Spacer(
-              flex: 2,
-            ),
+            BottomNavBar(),
           ],
         ),
       ),
