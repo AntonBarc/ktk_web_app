@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../constant.dart';
 
-class AccountButton extends StatelessWidget {
-  const AccountButton({
+class LeaveButton extends StatelessWidget {
+  const LeaveButton({
     Key? key,
   }) : super(key: key);
 
@@ -22,12 +22,12 @@ class AccountButton extends StatelessWidget {
         ),
         onPressed: () {},
         child: Row(children: <Widget>[
-          Icon(Icons.account_circle, color: sPrimaryColor),
+          Icon(Icons.exit_to_app_rounded, color: sPrimaryColor),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
           ),
           Text(
-            'Профиль'.toUpperCase(),
+            'Выйти'.toUpperCase(),
             style: TextStyle(
               fontSize: 20,
               fontFamily: 'Roboto',

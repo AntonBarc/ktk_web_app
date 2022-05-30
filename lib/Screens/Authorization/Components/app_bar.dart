@@ -45,10 +45,6 @@ class CustomAppBar extends StatelessWidget {
             title: 'Тесты',
             press: () {},
           ),
-          kMenuItem(
-            title: 'Помощь',
-            press: () {},
-          ),
           DefaultButton(),
         ],
       ),

@@ -15,6 +15,7 @@ class ExitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
+        width: 812,
         padding: EdgeInsets.symmetric(horizontal: 220),
         child: ButtonTheme(
           splashColor: kPrimaryColor,
@@ -39,7 +40,7 @@ class ExitButton extends StatelessWidget {
               ),
             ),
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(34),
               ),

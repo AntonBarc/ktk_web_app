@@ -7,7 +7,6 @@ import 'package:ktk_web/Screens/Home/Components/menu_item.dart';
 import 'package:ktk_web/constant.dart';
 
 import 'Buttons/exit_button.dart';
-import 'Buttons/help_button.dart';
 import 'Buttons/lectures_button.dart';
 import 'Buttons/main_button.dart';
 import 'Buttons/test_button.dart';
@@ -37,6 +36,7 @@ class Body extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: <Widget>[
                   MainButton(),
@@ -45,40 +45,11 @@ class Body extends StatelessWidget {
                   SizedBox(height: 20),
                   TestButton(),
                   SizedBox(height: 20),
-                  HelpButton(),
-                  SizedBox(height: 20),
                   ExitButton(),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 10),
-
-          /*Container(
-            height: 50,
-            margin: EdgeInsets.all(10),
-            color: kPrimaryColor,
-            child: Row(
-              children: <Widget>[
-                footItem(
-                  title: 'Главная',
-                  press: () {},
-                ),
-                footItem(
-                  title: 'Уч. Материалы',
-                  press: () {},
-                ),
-                footItem(
-                  title: 'Тесты',
-                  press: () {},
-                ),
-                footItem(
-                  title: 'Помощь',
-                  press: () {},
-                ),
-              ],
-            ),
-          ),*/
         ],
       ),
     );

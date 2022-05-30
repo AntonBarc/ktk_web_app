@@ -15,6 +15,7 @@ class LecturesButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FittedBox(
       child: Container(
+        width: 812,
         padding: EdgeInsets.symmetric(horizontal: 220),
         child: ButtonTheme(
           splashColor: kPrimaryColor,
