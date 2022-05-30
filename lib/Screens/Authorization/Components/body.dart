@@ -7,10 +7,10 @@ import 'package:ktk_web/Components/body_button.dart';
 import 'package:ktk_web/constant.dart';
 
 class Body extends StatelessWidget {
-  TextEditingController _loginController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  late String _login;
+  late String _email;
   late String _password;
 
   @override
@@ -111,7 +111,7 @@ class Body extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 20, top: 40),
               child: _input(Icon(Icons.person), 'Логин'.toUpperCase(),
-                  _loginController, false),
+                  _emailController, false),
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 20),
@@ -135,10 +135,10 @@ class Body extends StatelessWidget {
     }
 
     void _buttonAction() {
-      _login = _loginController.text;
+      _email = _emailController.text;
       _password = _passwordController.text;
 
-      _loginController.clear();
+      _emailController.clear();
       _passwordController.clear();
     }
 
