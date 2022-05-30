@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'package:ktk_web/Screens/Home/home_screen.dart';
@@ -9,8 +10,22 @@ class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final bool isLoggedIn = true;
+  Widget build(BuildContext context) => Scaffold(
+        body: StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return HomeScreen();
+            } else {
+              return AuthScreen();
+            }
+          },
+        ),
+      );
+
+//Size size = MediaQuery.of(context).size;
+  /*{
+    final bool isLoggedIn = false;
     Size size = MediaQuery.of(context).size;
     return isLoggedIn
         ? AuthScreen()
@@ -37,5 +52,5 @@ class LandingPage extends StatelessWidget {
               ),
             ),
           );
-  }
+  }*/
 }

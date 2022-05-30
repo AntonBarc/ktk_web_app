@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 
 import '../constant.dart';
 
@@ -22,9 +23,24 @@ class BodyButton extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(46)),
           child: ElevatedButton(
             style: ButtonStyle(
+              overlayColor: MaterialStateProperty.resolveWith(
+                (states) {
+                  return states.contains(MaterialState.pressed)
+                      ? kPrimaryColor
+                      : null;
+                },
+              ),
               backgroundColor: MaterialStateProperty.all<Color>(sPrimaryColor),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(34),
+                ),
+              ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AuthScreen()));
+            },
             child: Container(
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(

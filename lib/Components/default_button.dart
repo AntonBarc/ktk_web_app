@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../Screens/Authorization/auth_screen.dart';
 import '../constant.dart';
 
 class DefaultButton extends StatelessWidget {
@@ -20,7 +21,10 @@ class DefaultButton extends StatelessWidget {
           ),
           backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AuthScreen()));
+        },
         child: Text(
           'Войти'.toUpperCase(),
           style: TextStyle(

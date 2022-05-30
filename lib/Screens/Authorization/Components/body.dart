@@ -2,16 +2,27 @@
 
 import 'dart:html';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Components/body_button.dart';
 import 'package:ktk_web/constant.dart';
 
-class Body extends StatelessWidget {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
 
-  late String _email;
-  late String _password;
+class _BodyState extends State<Body> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +91,14 @@ class Body extends StatelessWidget {
     ) {
       return ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
+          overlayColor: MaterialStateProperty.resolveWith(
+            (states) {
+              return states.contains(MaterialState.pressed)
+                  ? kPrimaryColor
+                  : null;
+            },
+          ),
+          backgroundColor: MaterialStateProperty.all<Color>(sPrimaryColor),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25),
@@ -110,7 +128,7 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(bottom: 20, top: 40),
-              child: _input(Icon(Icons.person), 'Логин'.toUpperCase(),
+              child: _input(Icon(Icons.person), 'Email'.toUpperCase(),
                   _emailController, false),
             ),
             Padding(
@@ -134,18 +152,17 @@ class Body extends StatelessWidget {
       );
     }
 
-    void _buttonAction() {
-      _email = _emailController.text;
-      _password = _passwordController.text;
-
-      _emailController.clear();
-      _passwordController.clear();
+    Future signIn() async {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
     }
 
     return Column(
       children: <Widget>[
         _logo(),
-        _form('Войти'.toUpperCase(), _buttonAction),
+        _form('Войти'.toUpperCase(), signIn),
       ],
     );
   }
