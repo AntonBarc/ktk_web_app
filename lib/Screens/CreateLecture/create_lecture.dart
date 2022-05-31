@@ -4,18 +4,18 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
-import 'package:ktk_web/Screens/Home/Components/body.dart';
+import 'Components/body.dart';
 import 'package:ktk_web/constant.dart';
 import 'Components/app_bar.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class CreateLectureScreen extends StatefulWidget {
+  CreateLectureScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<CreateLectureScreen> createState() => _CreateLectureScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CreateLectureScreenState extends State<CreateLectureScreen> {
   int _selectedIndex = 0;
   final _widgetOptions = [
     Text('Index 0: Home'),
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               width: size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/bgi.png'),
+                  image: AssetImage('images/bg.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -68,29 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         },
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Главная',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.school),
-      //       label: 'Уч. материалы',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.check_circle),
-      //       label: 'Тесты',
-      //     ),
-      //   ],
-      //   currentIndex: _selectedIndex,
-      //   backgroundColor: sPrimaryColor,
-      //   selectedItemColor: kPrimaryColor,
-      //   onTap: (int index) {
-      //     setState(() {
-      //       _selectedIndex = index;
-      //     });
-      //   },
     );
   }
 }

@@ -21,10 +21,7 @@ class DefaultButton extends StatelessWidget {
           ),
           backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
         ),
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AuthScreen()));
-        },
+        onPressed: () {},
         child: Text(
           'Войти'.toUpperCase(),
           style: TextStyle(

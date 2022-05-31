@@ -1,14 +1,13 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'package:ktk_web/Screens/Home/home_screen.dart';
 
 import '/../constant.dart';
 
-class ExitButton extends StatelessWidget {
-  const ExitButton({
+class LecturesButton extends StatelessWidget {
+  const LecturesButton({
     Key? key,
   }) : super(key: key);
 
@@ -41,16 +40,16 @@ class ExitButton extends StatelessWidget {
               ),
             ),
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+              padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(34),
               ),
               child: Row(
                 children: <Widget>[
-                  Icon(Icons.exit_to_app, color: kPrimaryColor, size: 35),
+                  Icon(Icons.school, color: kPrimaryColor, size: 35),
                   SizedBox(width: 15),
                   Text(
-                    "Выход".toUpperCase(),
+                    "Уч. материалы".toUpperCase(),
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: kPrimaryColor,
@@ -62,7 +61,7 @@ class ExitButton extends StatelessWidget {
                 ],
               ),
             ),
-            onPressed: () => FirebaseAuth.instance.signOut(),
+            onPressed: () {},
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
@@ -11,6 +12,7 @@ class LeaveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
       child: TextButton(
@@ -20,14 +22,14 @@ class LeaveButton extends StatelessWidget {
           ),
           backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
         ),
-        onPressed: () {},
+        onPressed: () => FirebaseAuth.instance.signOut(),
         child: Row(children: <Widget>[
           Icon(Icons.exit_to_app_rounded, color: sPrimaryColor),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
           ),
           Text(
-            'Выйти'.toUpperCase(),
+            user.email!,
             style: TextStyle(
               fontSize: 20,
               fontFamily: 'Roboto',
