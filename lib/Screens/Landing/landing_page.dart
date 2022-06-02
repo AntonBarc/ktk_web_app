@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'package:ktk_web/Screens/CreateLecture/create_lecture.dart';
 import 'package:ktk_web/Screens/Home/home_screen.dart';
+import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
 
 import 'Components/app_bar.dart';
 import 'Components/body.dart';

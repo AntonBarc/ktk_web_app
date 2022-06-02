@@ -7,16 +7,15 @@ import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'Components/body.dart';
 import 'package:ktk_web/constant.dart';
 import 'Components/app_bar.dart';
-import 'package:dwds/dwds.dart';
 
-class CreateLectureScreen extends StatefulWidget {
-  CreateLectureScreen({Key? key}) : super(key: key);
+class LecturesScreen extends StatefulWidget {
+  LecturesScreen({Key? key}) : super(key: key);
 
   @override
-  State<CreateLectureScreen> createState() => _CreateLectureScreenState();
+  State<LecturesScreen> createState() => _LecturesScreenState();
 }
 
-class _CreateLectureScreenState extends State<CreateLectureScreen> {
+class _LecturesScreenState extends State<LecturesScreen> {
   int _selectedIndex = 0;
   final _widgetOptions = [
     Text('Index 0: Home'),

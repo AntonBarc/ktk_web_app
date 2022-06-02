@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Authorization/Components/body.dart';
+import 'Components/body.dart';
 import 'Components/app_bar.dart';
 
 class AuthScreen extends StatefulWidget {

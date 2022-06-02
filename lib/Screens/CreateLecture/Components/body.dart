@@ -1,11 +1,14 @@
 import 'dart:html';
+import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 import 'package:ktk_web/Components/body_button.dart';
 import 'package:ktk_web/Screens/Home/Components/footer_item.dart';
 import 'package:ktk_web/Screens/Home/Components/menu_item.dart';
 import 'package:ktk_web/constant.dart';
+import 'package:dwds/dwds.dart';
 
 import 'Buttons/exit_button.dart';
 import 'Buttons/lectures_button.dart';
@@ -16,10 +19,10 @@ class Body extends StatelessWidget {
   InputDecoration decoration(String label) => InputDecoration(
         labelStyle: TextStyle(color: Colors.white, fontSize: 24),
         labelText: label,
-        enabledBorder: const OutlineInputBorder(
+        enabledBorder: const UnderlineInputBorder(
           borderSide: const BorderSide(color: Colors.white, width: 2),
         ),
-        focusedBorder: const OutlineInputBorder(
+        focusedBorder: const UnderlineInputBorder(
           borderSide: const BorderSide(color: Colors.white, width: 2),
         ),
       );
@@ -99,7 +102,13 @@ class Body extends StatelessWidget {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          final name = controllerName.text;
+                          final desc = controllerDesc.text;
+                          createLecture(name: name, desc: desc);
+                          controllerName.clear();
+                          controllerDesc.clear();
+                        },
                       ),
                     ),
                   ),
@@ -111,4 +120,35 @@ class Body extends StatelessWidget {
       ),
     );
   }
+
+  Future createLecture({required String name, required String desc}) async {
+    final docLecture = FirebaseFirestore.instance.collection('lectures').doc();
+
+    final lecture = Lecture(
+      id: docLecture.id,
+      name: name,
+      desc: desc,
+    );
+    final json = lecture.toJson();
+
+    await docLecture.set(json);
+  }
+}
+
+class Lecture {
+  String id;
+  final String name;
+  final String desc;
+
+  Lecture({
+    this.id = '',
+    required this.name,
+    required this.desc,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'desc': desc,
+      };
 }
