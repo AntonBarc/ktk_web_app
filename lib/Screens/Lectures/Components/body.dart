@@ -1,10 +1,15 @@
 import 'dart:html';
+import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/physics.dart';
 import 'package:ktk_web/Components/body_button.dart';
 import 'package:ktk_web/Screens/Home/Components/footer_item.dart';
 import 'package:ktk_web/Screens/Home/Components/menu_item.dart';
 import 'package:ktk_web/constant.dart';
+
+import '../../CreateLecture/Components/body.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -12,33 +17,43 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            'Основы алгоритмизации \nи программирования'.toUpperCase(),
-            style: Theme.of(context)
-                .textTheme
-                .headline2
-                ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 20),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 200),
-            child: Align(
-              alignment: Alignment.bottomLeft,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: <Widget>[],
-              ),
-            ),
+          StreamBuilder<List<Lecture>>(
+            stream: readLectures(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Text('Что-то пошло не так!');
+              } else if (snapshot.hasData) {
+                final lecture = snapshot.data!;
+                return ListView(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: lecture.map(buildLecture).toList(),
+                );
+              } else {
+                return Center(
+                  child: CircularProgressIndicator(color: Colors.white),
+                );
+              }
+            },
           ),
         ],
       ),
     );
   }
+
+  Widget buildLecture(Lecture lecture) => ListTile(
+        leading: CircleAvatar(child: Text('${lecture.id}')),
+        title: Text(lecture.name),
+        subtitle: Text(lecture.desc),
+      );
+
+  Stream<List<Lecture>> readLectures() => FirebaseFirestore.instance
+      .collection('lectures')
+      .snapshots()
+      .map((snapshot) =>
+          snapshot.docs.map((doc) => Lecture.fromJson(doc.data())).toList());
 }

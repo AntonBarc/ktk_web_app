@@ -7,7 +7,6 @@ import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'Components/body.dart';
 import 'package:ktk_web/constant.dart';
 import 'Components/app_bar.dart';
-import 'package:dwds/dwds.dart';
 
 class CreateLectureScreen extends StatefulWidget {
   CreateLectureScreen({Key? key}) : super(key: key);

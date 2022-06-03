@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'package:ktk_web/Screens/Home/Components/body.dart';
+import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
 import 'package:ktk_web/constant.dart';
 import 'Components/app_bar.dart';
 
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       body: _selectedIndex == 1
-          ? AuthScreen()
+          ? LecturesScreen()
           : Container(
               height: size.height,
               width: size.width,

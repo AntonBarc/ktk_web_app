@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 import 'package:ktk_web/Screens/Home/home_screen.dart';
+import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
 
 import '/../constant.dart';
 
@@ -61,7 +62,10 @@ class LecturesButton extends StatelessWidget {
                 ],
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LecturesScreen()));
+            },
           ),
         ),
       ),

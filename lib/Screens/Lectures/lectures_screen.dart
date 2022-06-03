@@ -4,6 +4,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
+import 'package:ktk_web/Screens/Home/home_screen.dart';
 import 'Components/body.dart';
 import 'package:ktk_web/constant.dart';
 import 'Components/app_bar.dart';
@@ -16,7 +17,7 @@ class LecturesScreen extends StatefulWidget {
 }
 
 class _LecturesScreenState extends State<LecturesScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   final _widgetOptions = [
     Text('Index 0: Home'),
     Text('Index 1: Study'),
@@ -28,14 +29,14 @@ class _LecturesScreenState extends State<LecturesScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: _selectedIndex == 1
-          ? AuthScreen()
+      body: _selectedIndex == 0
+          ? HomeScreen()
           : Container(
               height: size.height,
               width: size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/bg.png'),
+                  image: AssetImage('images/bgw.png'),
                   fit: BoxFit.cover,
                 ),
               ),

@@ -17,7 +17,7 @@ class LandingPage extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return CreateLectureScreen();
+              return HomeScreen();
             } else {
               return AuthScreen();
             }

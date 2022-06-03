@@ -8,12 +8,6 @@ import 'package:ktk_web/Components/body_button.dart';
 import 'package:ktk_web/Screens/Home/Components/footer_item.dart';
 import 'package:ktk_web/Screens/Home/Components/menu_item.dart';
 import 'package:ktk_web/constant.dart';
-import 'package:dwds/dwds.dart';
-
-import 'Buttons/exit_button.dart';
-import 'Buttons/lectures_button.dart';
-import 'Buttons/main_button.dart';
-import 'Buttons/test_button.dart';
 
 class Body extends StatelessWidget {
   InputDecoration decoration(String label) => InputDecoration(
@@ -151,4 +145,10 @@ class Lecture {
         'name': name,
         'desc': desc,
       };
+
+  static Lecture fromJson(Map<String, dynamic> json) => Lecture(
+        id: json['id'],
+        name: json['name'],
+        desc: json['desc'],
+      );
 }
