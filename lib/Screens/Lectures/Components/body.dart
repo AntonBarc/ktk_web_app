@@ -46,6 +46,7 @@ class Body extends StatelessWidget {
   }
 
   Widget buildLecture(Lecture lecture) => ListTile(
+        textColor: Colors.white,
         leading: CircleAvatar(child: Text('${lecture.id}')),
         title: Text(lecture.name),
         subtitle: Text(lecture.desc),
