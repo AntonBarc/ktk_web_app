@@ -1,10 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
-import 'dart:html';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Components/body_button.dart';
 import 'package:ktk_web/constant.dart';
 
 class Body extends StatefulWidget {

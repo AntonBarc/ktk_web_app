@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../Screens/Authorization/auth_screen.dart';
 import '../constant.dart';
 
 class DefaultButton extends StatelessWidget {

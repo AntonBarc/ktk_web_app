@@ -1,11 +1,9 @@
 // @dart=2.9
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:ktk_web/Screens/Landing/landing_page.dart';
-import 'Screens/Home/home_screen.dart';
+
 import 'constant.dart';
 
 Future main() async {

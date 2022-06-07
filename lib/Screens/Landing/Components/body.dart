@@ -1,8 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Components/body_button.dart';
-import 'package:ktk_web/constant.dart';
+import '../../../Components/body_button.dart';
+import '../../../constant.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);

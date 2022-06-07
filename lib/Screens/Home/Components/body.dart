@@ -1,10 +1,10 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Components/body_button.dart';
-import 'package:ktk_web/Screens/Home/Components/footer_item.dart';
-import 'package:ktk_web/Screens/Home/Components/menu_item.dart';
-import 'package:ktk_web/constant.dart';
+import '../../../Components/body_button.dart';
+import 'footer_item.dart';
+import 'menu_item.dart';
+import '../../../constant.dart';
 
 import 'Buttons/exit_button.dart';
 import 'Buttons/lectures_button.dart';

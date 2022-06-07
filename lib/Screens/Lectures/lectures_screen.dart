@@ -1,12 +1,11 @@
 import 'dart:html';
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
-import 'package:ktk_web/Screens/Home/home_screen.dart';
+import '../Authorization/auth_screen.dart';
+import '../Home/home_screen.dart';
 import 'Components/body.dart';
-import 'package:ktk_web/constant.dart';
+import '../../constant.dart';
 import 'Components/app_bar.dart';
 
 class LecturesScreen extends StatefulWidget {
@@ -32,7 +31,7 @@ class _LecturesScreenState extends State<LecturesScreen> {
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             CustomAppBar(),
             Body(),
