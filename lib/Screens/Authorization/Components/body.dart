@@ -137,7 +137,7 @@ class _BodyState extends State<Body> {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 720),
+              padding: EdgeInsets.symmetric(horizontal: 620),
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width,

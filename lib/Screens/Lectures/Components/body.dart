@@ -107,7 +107,7 @@ class _BodyState extends State<Body> {
 
           //Список лекций
           Container(
-            height: 500,
+            height: 400,
             child: FutureBuilder<ListResult>(
               future: futureFiles,
               builder: (context, snapshot) {

@@ -21,23 +21,33 @@ class _LecturesScreenState extends State<LecturesScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/bg.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            CustomAppBar(),
-            Body(),
-          ],
-        ),
+      body: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Container(
+              height: size.height,
+              width: size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/bg.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  CustomAppBar(),
+                  Body(),
+                ],
+              ),
+            );
+          } else {
+            return AuthScreen();
+          }
+        },
       ),
+
       //footer
     );
   }

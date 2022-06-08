@@ -1,8 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-
+import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
 import '../../../Components/leave_button.dart';
+import '../../../Components/default_button.dart';
+import '../../../constant.dart';
 import 'menu_item.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -33,17 +35,17 @@ class CustomAppBar extends StatelessWidget {
             alignment: Alignment.topCenter,
           ),
           Spacer(),
-          kMenuItem(
+          hMenuItem(
             title: 'Главная',
-            press: () {},
+            // press: () {},
           ),
           kMenuItem(
             title: 'Уч. Материалы',
-            press: () {},
+            // press: () {},
           ),
           kMenuItem(
             title: 'Тесты',
-            press: () {},
+            // press: () {},
           ),
           LeaveButton(),
         ],

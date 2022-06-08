@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -29,26 +29,19 @@ class Body extends StatelessWidget {
                 ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 20),
           ),
-          Padding(
-            padding: EdgeInsets.only(right: 200),
-            child: Align(
-              alignment: Alignment.bottomLeft,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: <Widget>[
-                  MainButton(),
-                  SizedBox(height: 20),
-                  LecturesButton(),
-                  SizedBox(height: 20),
-                  TestButton(),
-                  SizedBox(height: 20),
-                  ExitButton(),
-                ],
-              ),
-            ),
+          Column(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <Widget>[
+              MainButton(),
+              SizedBox(height: 20),
+              LecturesButton(),
+              SizedBox(height: 20),
+              TestButton(),
+              SizedBox(height: 20),
+              ExitButton(),
+            ],
           ),
         ],
       ),

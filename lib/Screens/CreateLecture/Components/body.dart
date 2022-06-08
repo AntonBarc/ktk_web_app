@@ -40,7 +40,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +49,6 @@ class _BodyState extends State<Body> {
           ButtonTheme(
             splashColor: kPrimaryColor,
             highlightColor: sPrimaryColor,
-            padding: EdgeInsets.symmetric(horizontal: 0),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(46)),
             child: SizedBox(
@@ -111,7 +110,7 @@ class _BodyState extends State<Body> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 600,
+                height: 550,
                 child: ListView(
                   padding: EdgeInsets.all(20),
                   children: <Widget>[
