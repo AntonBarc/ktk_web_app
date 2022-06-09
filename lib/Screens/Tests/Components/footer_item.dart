@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Home/home_screen.dart';
-import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
 
 import '../../../constant.dart';
 
-class kMenuItem extends StatelessWidget {
+class footItem extends StatelessWidget {
   final String title;
-  // final Function press;
-  const kMenuItem({
+  final Function press;
+  const footItem({
     Key? key,
     required this.title,
-    // required this.press,
+    required this.press,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: press(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Text(
-          title.toUpperCase(),
+          title,
           style: TextStyle(
             fontFamily: 'Roboto',
-            color: kTextColor.withOpacity(0.5),
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+            color: sTextColor,
+            fontWeight: FontWeight.normal,
+            fontSize: 18,
           ),
         ),
       ),

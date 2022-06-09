@@ -35,11 +35,11 @@ class CustomAppBar extends StatelessWidget {
             alignment: Alignment.topCenter,
           ),
           Spacer(),
-          kMenuItem(
+          hMenuItem(
             title: 'Главная',
             // press: () {},
           ),
-          kMenuItem(
+          lMenuItem(
             title: 'Уч. Материалы',
             // press: () {},
           ),
@@ -47,7 +47,7 @@ class CustomAppBar extends StatelessWidget {
             title: 'Тесты',
             // press: () {},
           ),
-          DefaultButton(),
+          LeaveButton(),
         ],
       ),
     );

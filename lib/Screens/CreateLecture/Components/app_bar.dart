@@ -43,7 +43,7 @@ class CustomAppBar extends StatelessWidget {
             title: 'Уч. Материалы',
             // press: () {},
           ),
-          kMenuItem(
+          tMenuItem(
             title: 'Тесты',
             // press: () {},
           ),

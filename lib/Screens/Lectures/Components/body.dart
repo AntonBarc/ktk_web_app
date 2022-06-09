@@ -1,4 +1,4 @@
-import 'dart:html' as webFile;
+import 'dart:html' as html;
 import 'dart:convert';
 import 'dart:js' as js;
 
@@ -133,17 +133,12 @@ class _BodyState extends State<Body> {
                           ),
                           color: sPrimaryColor,
                           onPressed: () {
-                            if (kIsWeb) {
-                              var blob = webFile.Blob(
-                                  ["data"], 'text/plain', 'native');
-
-                              var anchorElement = webFile.AnchorElement(
-                                href: webFile.Url.createObjectUrlFromBlob(blob)
-                                    .toString(),
-                              )
-                                ..setAttribute("download", '${file.name}')
-                                ..click();
-                            }
+                            if (file.name == 'lol.txt') {
+                              downloadFile('/lib/favicon.png');
+                            } else if (file.name == 'Тема 1-1.doc') {
+                              downloadFile('/lib/index.html');
+                            } else if (file.name == 'lol.txt') {}
+                            ;
                           },
                         ),
                         contentPadding:
@@ -183,4 +178,10 @@ class _BodyState extends State<Body> {
 //       .snapshots()
 //       .map((snapshot) =>
 //           snapshot.docs.map((doc) => Lecture.fromJson(doc.data())).toList());
+}
+
+downloadFile(url) {
+  html.AnchorElement anchorElement = new html.AnchorElement(href: url);
+  anchorElement.download = 'testo';
+  anchorElement.click();
 }

@@ -1,8 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
-import 'package:ktk_web/Screens/Home/home_screen.dart';
+import 'package:ktk_web/Screens/Tests/tests_screen.dart';
 
 import '/../constant.dart';
 
@@ -61,7 +60,10 @@ class TestButton extends StatelessWidget {
                 ],
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TestsScreen()));
+            },
           ),
         ),
       ),

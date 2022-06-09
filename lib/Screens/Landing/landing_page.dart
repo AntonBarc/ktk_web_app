@@ -5,9 +5,6 @@ import '../CreateLecture/create_lecture.dart';
 import '../Home/home_screen.dart';
 import '../Lectures/lectures_screen.dart';
 
-import 'Components/app_bar.dart';
-import 'Components/body.dart';
-
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
