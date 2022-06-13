@@ -3,7 +3,9 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Models/question.dart';
 import 'package:ktk_web/Screens/Tests/Components/Widgets/answer.dart';
+import 'package:ktk_web/Screens/Tests/Components/Widgets/basic.dart';
 import 'package:ktk_web/Screens/Tests/Components/Widgets/progress_bar.dart';
+import 'package:ktk_web/Screens/Tests/Components/Widgets/result.dart';
 import '../../../Components/body_button.dart';
 import 'footer_item.dart';
 import 'menu_item.dart';
@@ -60,21 +62,17 @@ class _BodyState extends State<Body> {
               count: _questionIndex,
               total: data.questions.length,
             ),
-            Text(
-              data.questions[_questionIndex].title.toUpperCase(),
-              style: Theme.of(context)
-                  .textTheme
-                  .headline3
-                  ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 24),
-            ...data.questions[_questionIndex].answers
-                .map((value) => Answer(
-                      title: value['answer'],
-                      onChangeAnswer: _onChangeAnswer,
-                      isCorrect: value.containsKey('isCorrect') ? true : false,
-                    ))
-                .toList(),
+            _questionIndex < data.questions.length
+                ? Basic(
+                    index: _questionIndex,
+                    questionData: data,
+                    onChangeAnswer: _onChangeAnswer,
+                  )
+                : Result(
+                    count: _countResult,
+                    total: data.questions.length,
+                    onClearState: _clearState,
+                  ),
           ],
         ),
       ),

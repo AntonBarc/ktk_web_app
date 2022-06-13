@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KTK Web',
+      title: 'ЦФО КТК',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: kPrimaryColor,
