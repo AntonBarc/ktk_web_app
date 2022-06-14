@@ -2,9 +2,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
-import 'package:ktk_web/Screens/Home/home_screen.dart';
-
 import '/../constant.dart';
 
 class ExitButton extends StatelessWidget {

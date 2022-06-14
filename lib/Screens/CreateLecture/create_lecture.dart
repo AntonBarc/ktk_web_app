@@ -1,10 +1,5 @@
-import 'dart:html';
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../Authorization/auth_screen.dart';
 import 'Components/body.dart';
-import '../../constant.dart';
 import 'Components/app_bar.dart';
 
 class CreateLectureScreen extends StatefulWidget {

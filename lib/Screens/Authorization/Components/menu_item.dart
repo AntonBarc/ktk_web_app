@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ktk_web/Screens/Home/home_screen.dart';
-import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
-
 import '../../../constant.dart';
 
 class kMenuItem extends StatelessWidget {

@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:ktk_web/Screens/Authorization/auth_screen.dart';
 
 import '../constant.dart';
 
@@ -20,7 +21,10 @@ class DefaultButton extends StatelessWidget {
           ),
           backgroundColor: MaterialStateProperty.all<Color>(kPrimaryColor),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AuthScreen()));
+        },
         child: Text(
           'Войти'.toUpperCase(),
           style: TextStyle(

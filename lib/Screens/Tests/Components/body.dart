@@ -1,15 +1,8 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:ktk_web/Models/question.dart';
-import 'package:ktk_web/Screens/Tests/Components/Widgets/answer.dart';
 import 'package:ktk_web/Screens/Tests/Components/Widgets/basic.dart';
 import 'package:ktk_web/Screens/Tests/Components/Widgets/progress_bar.dart';
 import 'package:ktk_web/Screens/Tests/Components/Widgets/result.dart';
-import '../../../Components/body_button.dart';
-import 'footer_item.dart';
-import 'menu_item.dart';
-import '../../../constant.dart';
 
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);

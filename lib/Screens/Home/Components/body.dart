@@ -1,9 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import '../../../Components/body_button.dart';
-import 'footer_item.dart';
-import 'menu_item.dart';
 import '../../../constant.dart';
 
 import 'Buttons/exit_button.dart';

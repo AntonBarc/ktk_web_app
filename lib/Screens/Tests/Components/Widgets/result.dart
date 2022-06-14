@@ -15,6 +15,7 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String msg = '';
+    String label = '';
 
     if (0 <= count && count <= 2) {
       msg = 'Ваша оценка 2';
@@ -44,13 +45,30 @@ class Result extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text(
-              'Вы ответили верно на $count вопроса из $total',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline3
-                  ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
-            ),
+            if (count == 0 || count == 5)
+              Text(
+                'Вы ответили верно на $count вопросов из $total',
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
+              )
+            else if (count == 1)
+              Text(
+                'Вы ответили верно на $count вопрос из $total',
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
+              )
+            else
+              Text(
+                'Вы ответили верно на $count вопроса из $total',
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(color: sTextColor, fontWeight: FontWeight.bold),
+              ),
             SizedBox(
               height: 100,
             ),

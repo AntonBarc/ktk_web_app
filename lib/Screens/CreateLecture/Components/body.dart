@@ -1,15 +1,8 @@
-import 'dart:html';
-import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/physics.dart';
 import 'package:ktk_web/Screens/Lectures/lectures_screen.dart';
-import '../../../Components/body_button.dart';
-import '../../Home/Components/footer_item.dart';
-import '../../Home/Components/menu_item.dart';
 import '../../../constant.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:file_picker/file_picker.dart';
