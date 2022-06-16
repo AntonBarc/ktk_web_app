@@ -1,10 +1,17 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'Components/app_bar.dart';
 import 'Components/body.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
+class LandingPage extends StatefulWidget {
+  LandingPage({Key? key}) : super(key: key);
 
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

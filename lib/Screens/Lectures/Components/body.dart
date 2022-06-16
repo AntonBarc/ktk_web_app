@@ -31,6 +31,7 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     final Future<FirebaseApp> _initialization = Firebase.initializeApp();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
@@ -99,7 +100,7 @@ class _BodyState extends State<Body> {
 
           //Список лекций
           Container(
-            height: 500,
+            height: size.height - 300,
             child: FutureBuilder<ListResult>(
               future: futureFiles,
               builder: (context, snapshot) {
