@@ -16,7 +16,7 @@ class Basic extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text(
-          questionData.questions[index].title.toUpperCase(),
+          questionData.questions[index].title,
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
