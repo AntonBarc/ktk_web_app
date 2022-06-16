@@ -28,10 +28,19 @@ class _BodyState extends State<Body> {
 
   final controllerDesc = TextEditingController();
 
+  Color txtCol = Colors.white;
+
   double progress = 0.0;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    if (progress <= 50) {
+      txtCol = Colors.blue;
+    } else {
+      txtCol = Colors.white;
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 10),
       child: Column(
@@ -103,7 +112,7 @@ class _BodyState extends State<Body> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                height: 550,
+                height: size.height - 220,
                 child: ListView(
                   padding: EdgeInsets.all(20),
                   children: <Widget>[
@@ -128,7 +137,7 @@ class _BodyState extends State<Body> {
                                 center: Text(
                                   '$progress%',
                                   style: TextStyle(
-                                    color: kTextColor,
+                                    color: txtCol,
                                     fontSize: 14,
                                     fontFamily: 'Roboto',
                                   ),
